@@ -1,5 +1,5 @@
 /*
- * LED RGB - cores controlada por Potênciometro
+ * LED RGB - cores controladas por Potenciômetros
  * Jhonathan. Banczek
  * github.com/jhoonb
  */
@@ -29,9 +29,9 @@ void setup() {
 
 /*
  * limite: função que retorna o valor máximo 255
- * se o valor recebido pelo potênciometro 
+ * se o valor recebido pelo potenciômetro 
  * for igual ou maior a 253.
- * [apenas para limite e teste do potênciometro, depende do resistor]
+ * [apenas para limite e teste do potenciômetro, depende do resistor]
  */
 int limite(int vcor) {
   if(vcor >= 255) {
@@ -66,6 +66,6 @@ void loop() {
   analogWrite(BLUE, valorBLUE);
   
   // pode ajustar, quanto menor o valor, 
-  // maior 'precisão' no potênciometro
+  // maior 'precisão' no potenciômetro
   delay(10);
 }

@@ -24,4 +24,5 @@ board = Arduino("/dev/ttyACM0")
 
 Siga o exemplo do esquema abaixo:
 
-![esquema](https://raw.githubusercontent.com/jhoonb/arduino-projetos/master/led_simples_python/esquema_led_simples_python_bb.png | width=400)
+<img src="https://raw.githubusercontent.com/jhoonb/arduino-projetos/master/led_simples_python/esquema_led_simples_python_bb.png" 
+height="489" width="539">
