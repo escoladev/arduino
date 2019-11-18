@@ -8,5 +8,5 @@
 
 Siga o exemplo do esquema abaixo
 
-<img src="https://raw.githubusercontent.com/jhoonb/arduino-projetos/master/led_rgb_potenciometro/esquema_led_rgb_potenciometro_bb.png" 
+<img src="https://raw.githubusercontent.com/jhoonb/arduino-projetos/master/led_rgb_potenciometro/esquema_led_rgb_potenciometro.png" 
 height="420" width="695">
