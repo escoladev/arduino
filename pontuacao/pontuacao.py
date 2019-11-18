@@ -21,6 +21,7 @@ Alto Falante/buzzer/speaker: porta: 12
 from pymata_aio.pymata3 import PyMata3
 from pymata_aio.constants import Constants
 import speech_recognition as sr
+import ascii_mensagem as am
 
 
 def verificar_comando(frase, tipo, quantidade=2):
@@ -41,7 +42,6 @@ def verificar_comando(frase, tipo, quantidade=2):
 	for palavra in comandos[tipo]:
 		if palavra in frase:
 			qnt += 1
-			print(palavra)
 
 	if qnt >= quantidade:
 		if tipo == 'jogador_1':
@@ -100,7 +100,6 @@ class Pontuacao:
 
 	def leds_vitoria(self):
 
-		print("\t ", self.leds_vencedor())
 		print('\t ', self.vencedor)
 
 		# toca as seguintes notas 2x, depois 1x ao contŕario
@@ -173,13 +172,27 @@ class Pontuacao:
 		return frase
 
 
+	def tocar_som_ponto(self, tipo):
+
+		if tipo == 1:
+			nota = 349 # F
+		else:
+			nota = 392 # G
+
+		self.board.play_tone(self.alto_falante,
+			Constants.TONE_TONE, nota, None)
+		self.board.sleep(0.1)
+		self.board.play_tone(self.alto_falante, 
+			Constants.TONE_NO_TONE, 0, 0)
+
+
 	def play(self):
 
 		while True:
 			# led desligado enquanto nao iniciar 
 			self.board.digital_write(self.led_em_jogo, 0)
 
-			mensagem = 'COMANDO DE VOZ: INICIAR?'
+			mensagem = am.COMANDO_VOZ
 			comando = self.ouvir_microfone(mensagem)
 			# não reconheceu - repete.
 			if not comando:
@@ -190,14 +203,19 @@ class Pontuacao:
 
 			self.reiniciar_valores()
 
+			# inicio do *jogo*
+			print(am.INICIO_JOGO)
 			while True:
 				if self.vencedor:
-					print("{} VENCEU!".format(self.vencedor.upper()))
+					if self.vencedor == 'jogador_1':
+						print(am.JOGADOR1_VENCEU)
+					else:
+						print(am.JOGADOR2_VENCEU)
 					self.leds_vitoria()
 					self.reiniciar_valores()
 					break
 
-				mensagem = 'COMANDO DE VOZ: PONTO PARA?'
+				mensagem = am.COMANDO_VOZ
 				comando = self.ouvir_microfone(mensagem)
 				# não reconheceu - repete.
 				if not comando:
@@ -205,8 +223,10 @@ class Pontuacao:
 
 				if verificar_comando(comando, 'jogador_1', 3):
 					self.jogador_1 += 1
+					self.tocar_som_ponto(1)
 				elif verificar_comando(comando, 'jogador_2', 3):
 					self.jogador_2 += 1
+					self.tocar_som_ponto(2)
 				else:
 					print('[OPÇÃO NAO RECONHECIDA]', comando)
 
