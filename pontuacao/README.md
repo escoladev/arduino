@@ -5,9 +5,8 @@ no Arduino (com emissão de som através de um alto-falante/buzzer).
 
 ### Vídeo
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=VU8MLpR6j
-" target="_blank"><img src="http://img.youtube.com/vi/VU8MLpR6j/0.jpg" 
-alt="Vídeo do projeto" width="540" height="480" border="10" /></a>
+[![Vídeo do Projeto](http://img.youtube.com/vi/VU8MLpR6j-s/0.jpg)](http://www.youtube.com/watch?v=VU8MLpR6j-s "Vídeo do Projeto")
+
 
 https://www.youtube.com/watch?v=VU8MLpR6j-s&feature=youtu.be
 ## Requirements
