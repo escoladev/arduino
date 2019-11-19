@@ -160,11 +160,12 @@ class Pontuacao:
 			self.microfone.adjust_for_ambient_noise(source)
 
 			print(mensagem)
+			
 			audio = self.microfone.listen(source)
 			try:
 				frase = self.microfone.recognize_google(audio, 
 					language='pt-BR')
-				print("[comando]: " + frase.upper())
+				#print("[comando]: " + frase.upper())
 				frase = frase.lower()
 			except: # sr.UnkownValueError
 				print("[comando]: não reconhecido - repita.")

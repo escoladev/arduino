@@ -3,7 +3,13 @@
 Usando Python e comunicação por voz para ativar/controlar os LEDs
 no Arduino (com emissão de som através de um alto-falante/buzzer).
 
+### Vídeo
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=VU8MLpR6j
+" target="_blank"><img src="http://img.youtube.com/vi/VU8MLpR6j/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="540" height="480" border="10" /></a>
+
+https://www.youtube.com/watch?v=VU8MLpR6j-s&feature=youtu.be
 ## Requirements
 
 - [Python 3.5 >](https://www.python.org/downloads/)
