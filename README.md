@@ -13,6 +13,8 @@ feito no software Fritzing (.fzz) e a imagem do esquema de montagem (.png)
 
 - [Sistema de Pontuação controlado por Voz (via *Python*)](https://github.com/jhoonb/arduino-projetos/tree/master/pontuacao)
 
+- [Genius Game (clássico jogo da memória)](https://github.com/jhoonb/arduino-projetos/tree/master/genius)
+
 - Semáforo carro/pedestre
 
 - Piano Com Arduino
