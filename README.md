@@ -15,6 +15,8 @@ feito no software Fritzing (.fzz) e a imagem do esquema de montagem (.png)
 
 - [Genius Game (clássico jogo da memória)](https://github.com/jhoonb/arduino-projetos/tree/master/genius)
 
+- [Controlando LED RGB através de um bot Telegram (Python)](https://github.com/jhoonb/arduino-projetos/tree/master/led_rgb_python_telegram/) 
+- 
 - Semáforo carro/pedestre
 
 - Piano Com Arduino
