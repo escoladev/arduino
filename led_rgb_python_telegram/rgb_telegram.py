@@ -1,32 +1,27 @@
 import os
 import telebot
-from dataclasses import dataclass
+import serial
 
 # bot: constantino_bot
 # export BOT_API_TOKEN="<chave gerada pelo bot do telegram>"
 # configurada como variável ambiente no OS
 __token__ = os.environ['BOT_API_TOKEN']
 
-# cores
-@dataclass
-class RGB:
-    nome: str
-    r: int
-    g: int 
-    b: int
 
 cores = { 
-    "Branco": RGB("Branco", 255, 255, 255),
-    "Azul": RGB("Azul", 0, 0, 255),
-    "Vermelho": RGB("Vermelho", 255, 0, 0),
-    "Verde": RGB("Verde", 0, 255, 0),
-    "Amarelo": RGB("Amarelo", 255, 255, 0),
-    "Magenta": RGB("Magenta", 255, 0, 255),
-    "Ciano": RGB("Ciano", 0, 255, 255),
-    "Preto": RGB("Preto", 0, 0, 0)
+    "Branco": '0',
+    "Azul": '1',
+    "Vermelho": '2',
+    "Verde": '3',
+    "Amarelo": '4',
+    "Magenta": '5',
+    "Ciano": '6',
+    "Preto": '7'
 }
   
 bot = telebot.TeleBot(os.environ['BOT_API_TOKEN'])
+# configurar a porta correta do arduino no seu SO.
+board = serial.Serial('/dev/ttyACM0',9600)
 
 print("[Telegram] Escola Padre Constantino - Iniciado!")
 print("[Eletiva Missão Transformers!]")
@@ -111,17 +106,9 @@ def led_cor(message):
     print(txt)
     if txt in cores:
         print(cores[txt])
-    # [TODO]
-    # Escolher RGB
-    # elif txt == "Escolher_RGB":
-    #     bot.send_message(message.chat.id, 
-    #     "Escolha o valor rgb:" +
-    #     "separado por ',' por exemplo: "+
-    #     "200, 40, 50" +
-    #     ": ")
-    # else:
-    #     print("manualmente...")
-    #     print(txt.strip())
+        b =  bytes(cores[txt], encoding='UTF-8')
+        print("--->", b)
+        board.write(b)
 
 
 ############################################# escola
