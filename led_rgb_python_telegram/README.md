@@ -3,19 +3,19 @@
 Usando Python e comunicação via telegram para ativar/controlar o LED RGB
 no Arduino.
 
-### Vídeo
+- Carregar o programa ```rgb_telegram.ino``` no arduino.
+
+- Executar o programa com ```python rgb_telegram.py``` 
 
 
-https://www.youtube.com/watch?v=VU8MLpR6j-s&feature=youtu.be
 ## Requirements
 
-- [Python 3.5 >](https://www.python.org/downloads/)
+- [Lib Serial](https://pypi.org/project/pyserial/) instalando via
+pip:  ```pip install pyserial```
 
-- [Arduino com o firmware do StandardFirmata](https://github.com/MrYsLab/pymata-aio/wiki/Uploading-StandardFirmata-To-Arduino) 
+- [Python Telegram bot api](https://github.com/eternnoir/pyTelegramBotAPI) instalando
+via pip: ```pip install pyTelegramBotAPI```
 
-- [Arduino com o firmware FirmataPlus](https://github.com/MrYsLab/pymata-aio/wiki/Uploading-FirmataPlus-to-Arduino)
-
-- Telegram python
 
 
 ## Material
@@ -23,10 +23,6 @@ https://www.youtube.com/watch?v=VU8MLpR6j-s&feature=youtu.be
 
 ## Esquema
 
-Veja imagem abaixo:
-
-<img src="link" 
-height="430" width="519">
 
 ## Descrição
 
