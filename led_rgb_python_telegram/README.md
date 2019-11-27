@@ -1,7 +1,11 @@
-# Pontuação - Arduino
+# LED RGB controle via bot telegram
 
 Usando Python e comunicação via telegram para ativar/controlar o LED RGB
 no Arduino.
+
+- Registre seu bot no telegram e consiga o TOKEN
+  
+- Use o comando ```export``` para criar a variável de ambiente ```export BOT_API_TOKEN="seu_token_bot_telegram_api"```
 
 - Carregar o programa ```rgb_telegram.ino``` no arduino.
 
