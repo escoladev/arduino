@@ -8,11 +8,18 @@
 #define BLUE 5
 #define GREEN 6
 
+const int pinoPOT0 = A0; // pino de entrada do potenciômetro BLUE
+const int pinoPOT1 = A1; // pino de entrada do potenciômetro GREEN
+const int pinoPOT2 = A2; // pino de entrada do potenciômetro RED
+
 int valorRED = 0;
 int valorGREEN = 0;
 int valorBLUE = 0;
 
 void setup() {
+  pinMode(pinoPOT2, INPUT);
+  pinMode(pinoPOT1, INPUT); 
+  pinMode(pinoPOT0, INPUT);
   pinMode(RED, OUTPUT);
   pinMode(GREEN, OUTPUT);
   pinMode(BLUE, OUTPUT);
@@ -35,10 +42,15 @@ int limite(int vcor) {
 
 
 void loop() {
+  // testar antes se o maximo da 255 [+ 10]
+  valorRED = map(analogRead(pinoPOT2), 0, 1023, 0, 265); 
+  valorGREEN = map(analogRead(pinoPOT1), 0, 1023, 0, 265); //
+  valorBLUE = map(analogRead(pinoPOT0), 0, 1023, 0, 265); //
 
-  valorRED = 200;
-  valorGREEN = 200;
-  valorBLUE = 50;
+  // verifica o limite
+  valorRED = limite(valorRED);
+  valorGREEN = limite(valorGREEN);
+  valorBLUE = limite(valorBLUE);
 
   // exibir no Monitor Serial
   Serial.print("valorRED: ");
